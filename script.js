@@ -61,6 +61,7 @@ function addDefinitionsHTML(element, data) {
 function onKeyUp(e) {
     e.preventDefault();
     let enteredWord = e.target.value;
+    console.log(enteredWord);
     return findWordsFromAnagram(enteredWord);
 }
 

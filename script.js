@@ -20,7 +20,6 @@ fetch("dictionary.txt")
 
 function fetchDefinitions(e) {
     let chosenWord = e.target.parentElement.parentElement.firstElementChild.textContent;
-    console.log(chosenWord);
     fetch(`https://wordsapiv1.p.rapidapi.com/words/${chosenWord}/definitions`, {
 	"method": "GET",
 	"headers": {
@@ -59,17 +58,14 @@ function addDefinitionsHTML(element, data) {
 }
 
 function onKeyUp(e) {
-    e.preventDefault();
     let enteredWord = e.target.value;
-    console.log(enteredWord);
     return findWordsFromAnagram(enteredWord);
 }
 
 function findWordsFromAnagram(anagram) {
     let filteredWordList = [];
     let finalWordList = [];
-    //anagram = anagram.toLowerCase().split("").sort();
-    console.log(anagram);
+    anagram = anagram.toLowerCase().split("").sort();
     //filter the dictionary list by the length of the anagram
     for (let i = 0; i < words.length; i++) {
         if (words[i].length === anagram.length) {
@@ -77,7 +73,6 @@ function findWordsFromAnagram(anagram) {
             filteredWordList.push(words[i]);
         }
     }
-    console.log(filteredWordList);
     //make a copy of filteredWordList and sort all words inside alphabetically
     let sortedFilteredWordList = filteredWordList.map(x => x);
     for (let i = 0; i < sortedFilteredWordList.length; i++) {
@@ -96,7 +91,6 @@ function findWordsFromAnagram(anagram) {
         }
         booleanTracker = true;
     }
-    console.log(finalWordList);
     return outputWordsFromAnagram(finalWordList);
 }
 
@@ -106,9 +100,11 @@ function outputWordsFromAnagram(words) {
     for (let i = 0; i < words.length; i++) {
         outputHTML += `<div class="col-lg-12 col-m-12 col-sm-12 col-xs-12 mb-3 flip-card">
                                 <div class="text-center flip-card-front">
-                                    <div class="card-header"><h5>${words[i]}</h5></div>
-                                    <div class="card-body text-primary">
-                                        <p id="definitions" class="click">Click here for its definition!<p>
+                                    <div class="card border-primary flip-card-inner">
+                                        <div class="card-header"><h5>${words[i]}</h5></div>
+                                        <div class="card-body text-primary">
+                                            <p id="definitions" class="click">Click here for its definition!<p>
+                                        </div>
                                     </div>
                             </div>
                         </div>`;
@@ -120,8 +116,6 @@ function outputWordsFromAnagram(words) {
     }
 }
 
-// <div class="card border-primary flip-card-inner">
-// </div>
 
 
 

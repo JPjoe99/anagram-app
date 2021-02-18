@@ -1,4 +1,4 @@
-import {APIKey} from "./key.js";
+//import {APIKey} from "./key.js";
 
 let inputElement = document.querySelector("#anagram-input");
 
@@ -25,7 +25,7 @@ function fetchDefinitions(e) {
     fetch(`https://wordsapiv1.p.rapidapi.com/words/${chosenWord}/definitions`, {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": APIKey,
+		"x-rapidapi-key": "0ec181c35emsh169688f20fd2020p1769bajsnc9415fc058b4",
 		"x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
 	}
 })

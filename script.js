@@ -12,9 +12,9 @@ fetch("dictionary.txt")
 })
 .then(dictionary => {
     words = dictionary.split("\n");
-    // for (let i = 0; i < words.length; i++) {
-    //     words[i] = words[i].slice(0,-1);
-    // }
+    for (let i = 0; i < words.length; i++) {
+        words[i] = words[i].trim();
+    }
 })
 .catch(error => {
     console.log(error);

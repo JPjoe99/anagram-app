@@ -61,7 +61,7 @@ function addDefinitionsHTML(element, data) {
 function onKeyUp(e) {
     e.preventDefault();
     let enteredWord = e.target.value;
-    findWordsFromAnagram(enteredWord);
+    return findWordsFromAnagram(enteredWord);
 }
 
 function findWordsFromAnagram(anagram) {
@@ -74,6 +74,7 @@ function findWordsFromAnagram(anagram) {
             filteredWordList.push(words[i]);
         }
     }
+    console.log(filteredWordList);
     //make a copy of filteredWordList and sort all words inside alphabetically
     let sortedFilteredWordList = filteredWordList.map(x => x);
     for (let i = 0; i < sortedFilteredWordList.length; i++) {

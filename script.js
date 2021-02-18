@@ -67,8 +67,7 @@ function onKeyUp(e) {
 function findWordsFromAnagram(anagram) {
     let filteredWordList = [];
     let finalWordList = [];
-    anagram = anagram.toLowerCase();
-    //.split("").sort();
+    anagram = anagram.toLowerCase().split("").sort();
     //filter the dictionary list by the length of the anagram
     for (let i = 0; i < words.length; i++) {
         if (words[i].length === anagram.length) {
@@ -103,13 +102,11 @@ function outputWordsFromAnagram(words) {
     let outputHTML = ``;
     for (let i = 0; i < words.length; i++) {
         outputHTML += `<div class="col-lg-12 col-m-12 col-sm-12 col-xs-12 mb-3 flip-card">
-                            <div class="card border-primary flip-card-inner">
                                 <div class="text-center flip-card-front">
                                     <div class="card-header"><h5>${words[i]}</h5></div>
                                     <div class="card-body text-primary">
                                         <p id="definitions" class="click">Click here for its definition!<p>
                                     </div>
-                                </div>
                             </div>
                         </div>`;
     }
@@ -119,5 +116,10 @@ function outputWordsFromAnagram(words) {
         definitionElements[i].addEventListener("click", fetchDefinitions);
     }
 }
+
+// <div class="card border-primary flip-card-inner">
+// </div>
+
+
 
 

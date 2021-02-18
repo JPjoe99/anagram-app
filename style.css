@@ -27,9 +27,5 @@ html, body {
     height: 100%;
     backface-visibility: hidden;
   }
-
-.expand {
-    transform: scaleY(1);
-}
   
   

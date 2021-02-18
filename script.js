@@ -1,3 +1,5 @@
+import {APIKey} from "./key.js";
+
 let inputElement = document.querySelector("#anagram-input");
 
 inputElement.addEventListener("keyup", onKeyUp);
@@ -10,9 +12,9 @@ fetch("dictionary.txt")
 })
 .then(dictionary => {
     words = dictionary.split("\n");
-    for (let i = 0; i < words.length; i++) {
-        words[i] = words[i].slice(0,-1);
-    }
+    // for (let i = 0; i < words.length; i++) {
+    //     words[i] = words[i].slice(0,-1);
+    // }
 })
 .catch(error => {
     console.log(error);
@@ -23,7 +25,7 @@ function fetchDefinitions(e) {
     fetch(`https://wordsapiv1.p.rapidapi.com/words/${chosenWord}/definitions`, {
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "0ec181c35emsh169688f20fd2020p1769bajsnc9415fc058b4",
+		"x-rapidapi-key": APIKey,
 		"x-rapidapi-host": "wordsapiv1.p.rapidapi.com"
 	}
 })

@@ -73,7 +73,7 @@ function findWordsFromAnagram(anagram) {
     //filter the dictionary list by the length of the anagram
     for (let i = 0; i < words.length; i++) {
         if (words[i].length === anagram.length) {
-            console.log(words[i]);
+            console.log(`Word of the same length: ${words[i]}`);
             filteredWordList.push(words[i]);
         }
     }

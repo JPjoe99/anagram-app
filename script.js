@@ -67,13 +67,20 @@ function onKeyUp(e) {
 function findWordsFromAnagram(anagram) {
     let filteredWordList = [];
     let finalWordList = [];
+    // console.log(words);
     anagram = anagram.toLowerCase().split("").sort();
+    console.log(anagram);
+    console.log(`Length of anagram: ${anagram.length}`);
+    console.log(`Length of words[0]: ${words[0].length}`);
+    console.log(`words[0].split():`);
+    console.log(words[0].trim(""));
     //filter the dictionary list by the length of the anagram
     for (let i = 0; i < words.length; i++) {
-        if (words[i].length === anagram.length) {
+        if (words[i].length == anagram.length) {
             filteredWordList.push(words[i]);
         }
     }
+    //console.log(filteredWordList);
     //make a copy of filteredWordList and sort all words inside alphabetically
     let sortedFilteredWordList = filteredWordList.map(x => x);
     for (let i = 0; i < sortedFilteredWordList.length; i++) {

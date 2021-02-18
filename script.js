@@ -67,7 +67,8 @@ function onKeyUp(e) {
 function findWordsFromAnagram(anagram) {
     let filteredWordList = [];
     let finalWordList = [];
-    anagram = anagram.toLowerCase().split("").sort();
+    anagram = anagram.toLowerCase();
+    //.split("").sort();
     //filter the dictionary list by the length of the anagram
     for (let i = 0; i < words.length; i++) {
         if (words[i].length === anagram.length) {

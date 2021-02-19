@@ -51,9 +51,10 @@ function addDefinitionsHTML(element, data) {
         element.lastElementChild.innerHTML = definitionsHTML;
         return;
     }
-    definitionsHTML = `<p class="card-title" style="text-align: left">Definitions of ${data.word}:</p><ul>`;
+    //definitionsHTML = `<p class="card-title" style="text-align: left">Definitions of ${data.word}:</p><ul>`;
+    definitionsHTML = `<ul>`;
     for (let i = 0; i < data.definitions.length; i++) {
-        definitionsHTML += `<p style="text-align: left">${data.definitions[i].definition}</p>`;
+        definitionsHTML += `<li class="list-group-item" style="text-align: center">${data.definitions[i].definition}</li>`;
     }
     definitionsHTML += `</ul>`;
     element.lastElementChild.innerHTML = definitionsHTML;

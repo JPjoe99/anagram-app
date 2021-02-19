@@ -9,18 +9,49 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <body>
-    <header>
-        <h1 class="text-center">Anagram App</h1>
-    </header>
-    <div class="container">
-        <div class="input-group">
-            <input id="anagram-input" type="text" class="form-control" placeholder="Anagram">
+    <!-- <header>
+        
+        <h1 class="text-left">Anagram App</h1>
+    </header> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Anagram</a>
+            <!-- <div class="d-none d-sm-block"> -->
+                <form class="d-lg-none">
+                    <input id="anagram-input" class="form-control me-2" type="text" placeholder="Anagram">
+                </form>
+            <!-- </div> -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sign up</a>
+                    </li>
+                </ul>
+                <form class="d-none d-lg-block">
+                    <input id="anagram-input" class="form-control me-2" type="text" placeholder="Anagram">
+                </form>
+            </div>
         </div>
-    </div>
+    </nav>
+    <!-- <div class="container">
+        <div class="input-group">
+            <input id="anagram-input" type="text" class="form-control" placeholder="Enter your anagram">
+        </div>
+    </div> -->
     <div class="container mt-3">
         <div id="output" class="row">
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     <script src="./script.js" defer type="module"></script>
 </body>
 </html>
